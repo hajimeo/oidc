@@ -674,6 +674,7 @@ func (s *Storage) setUserinfo(ctx context.Context, userInfo *oidc.UserInfo, user
 			userInfo.FamilyName = user.LastName
 			userInfo.GivenName = user.FirstName
 			userInfo.Locale = oidc.NewLocale(user.PreferredLanguage)
+			userInfo.Groups = strings.Split(user.Groups, ",")
 		case oidc.ScopePhone:
 			userInfo.PhoneNumber = user.Phone
 			userInfo.PhoneNumberVerified = user.PhoneVerified
