@@ -10,5 +10,5 @@ REDIRECT_URI='http://localhost:8081/oidc/callback?hash=#browse/welcome,http://lo
 ### How to build
 https://github.com/hajimeo/samples/blob/096e79309d9f21c8ccdde18687c21973798849bc/runcom/bash_aliases.sh#L793-L837
 ```
-goBuild "" "oicdserver"
+goBuild "" "oidcserver"
 ```
