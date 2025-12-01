@@ -63,11 +63,11 @@ func NewUserStore(issuer string) UserStore {
 		users: map[string]*User{
 			"id1": {
 				ID:                "id1",
-				Username:          "test-user@" + hostname,
+				Username:          "test-user",
 				Password:          "verysecure",
 				FirstName:         "Test",
 				LastName:          "User",
-				Email:             "test-user@zitadel.ch",
+				Email:             "test-user@" + hostname,
 				EmailVerified:     true,
 				Phone:             "",
 				PhoneVerified:     false,
@@ -81,7 +81,7 @@ func NewUserStore(issuer string) UserStore {
 				Password:          "verysecure",
 				FirstName:         "Test",
 				LastName:          "User2",
-				Email:             "test-user2@zitadel.ch",
+				Email:             "test-user2@" + hostname,
 				EmailVerified:     true,
 				Phone:             "",
 				PhoneVerified:     false,
