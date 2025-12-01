@@ -10,7 +10,6 @@ type UserInfo struct {
 	Address *UserInfoAddress `json:"address,omitempty"`
 
 	Claims map[string]any `json:"-"`
-	Groups []string       `json:"groups,omitempty"`
 }
 
 func (u *UserInfo) AppendClaims(k string, v any) {
@@ -46,20 +45,21 @@ func (u *UserInfo) UnmarshalJSON(data []byte) error {
 }
 
 type UserInfoProfile struct {
-	Name              string  `json:"name,omitempty"`
-	GivenName         string  `json:"given_name,omitempty"`
-	FamilyName        string  `json:"family_name,omitempty"`
-	MiddleName        string  `json:"middle_name,omitempty"`
-	Nickname          string  `json:"nickname,omitempty"`
-	Profile           string  `json:"profile,omitempty"`
-	Picture           string  `json:"picture,omitempty"`
-	Website           string  `json:"website,omitempty"`
-	Gender            Gender  `json:"gender,omitempty"`
-	Birthdate         string  `json:"birthdate,omitempty"`
-	Zoneinfo          string  `json:"zoneinfo,omitempty"`
-	Locale            *Locale `json:"locale,omitempty"`
-	UpdatedAt         Time    `json:"updated_at,omitempty"`
-	PreferredUsername string  `json:"preferred_username,omitempty"`
+	Name              string   `json:"name,omitempty"`
+	GivenName         string   `json:"given_name,omitempty"`
+	FamilyName        string   `json:"family_name,omitempty"`
+	MiddleName        string   `json:"middle_name,omitempty"`
+	Nickname          string   `json:"nickname,omitempty"`
+	Profile           string   `json:"profile,omitempty"`
+	Picture           string   `json:"picture,omitempty"`
+	Website           string   `json:"website,omitempty"`
+	Gender            Gender   `json:"gender,omitempty"`
+	Birthdate         string   `json:"birthdate,omitempty"`
+	Zoneinfo          string   `json:"zoneinfo,omitempty"`
+	Locale            *Locale  `json:"locale,omitempty"`
+	UpdatedAt         Time     `json:"updated_at,omitempty"`
+	PreferredUsername string   `json:"preferred_username,omitempty"`
+	Groups            []string `json:"groups,omitempty"`
 }
 
 type UserInfoEmail struct {
