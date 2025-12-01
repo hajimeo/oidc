@@ -665,6 +665,12 @@ func (s *Storage) setUserinfo(ctx context.Context, userInfo *oidc.UserInfo, user
 		switch scope {
 		case oidc.ScopeOpenID:
 			userInfo.Subject = user.ID
+			// Adding more claims for Nexus 3, which doesnt use /userinfo endpoint but decodes id_token only
+			userInfo.Email = user.Email
+			userInfo.Name = user.FirstName + " " + user.LastName
+			userInfo.FamilyName = user.LastName
+			userInfo.GivenName = user.FirstName
+			userInfo.Groups = strings.Split(user.Groups, ",")
 		case oidc.ScopeEmail:
 			userInfo.Email = user.Email
 			userInfo.EmailVerified = oidc.Bool(user.EmailVerified)
@@ -674,6 +680,7 @@ func (s *Storage) setUserinfo(ctx context.Context, userInfo *oidc.UserInfo, user
 			userInfo.FamilyName = user.LastName
 			userInfo.GivenName = user.FirstName
 			userInfo.Locale = oidc.NewLocale(user.PreferredLanguage)
+			userInfo.Groups = strings.Split(user.Groups, ",")
 		case oidc.ScopePhone:
 			userInfo.PhoneNumber = user.Phone
 			userInfo.PhoneNumberVerified = user.PhoneVerified

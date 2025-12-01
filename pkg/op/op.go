@@ -69,6 +69,7 @@ var (
 		"email_verified",
 		"phone_number",
 		"phone_number_verified",
+		"groups",
 	}
 
 	defaultCORSOptions = cors.Options{

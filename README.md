@@ -112,7 +112,8 @@ Here is json equivalent for one of the default users
     "Phone": "",
     "PhoneVerified": false,
     "PreferredLanguage": "DE",
-    "IsAdmin": false
+    "IsAdmin": false,
+    "Groups": "admins,users"
   }
 }
 ```

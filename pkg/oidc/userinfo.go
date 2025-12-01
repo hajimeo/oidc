@@ -10,6 +10,7 @@ type UserInfo struct {
 	Address *UserInfoAddress `json:"address,omitempty"`
 
 	Claims map[string]any `json:"-"`
+	Groups []string       `json:"groups,omitempty"`
 }
 
 func (u *UserInfo) AppendClaims(k string, v any) {
